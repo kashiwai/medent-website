@@ -1,0 +1,254 @@
+/* General Styles */
+:root {
+    --primary-color: #0dcaf0;
+    --secondary-color: #6c757d;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --gradient-start: #0dcaf0;
+    --gradient-end: #0a8ec7;
+}
+
+body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section with Medical Background Image */
+.hero-section {
+    background: 
+        linear-gradient(135deg, rgba(13, 202, 240, 0.85) 0%, rgba(10, 142, 199, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1584982751601-97dcc096659c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+/* Alternative medical background images (uncomment to use) */
+/* Option 2: Modern hospital corridor
+.hero-section {
+    background: 
+        linear-gradient(135deg, rgba(13, 202, 240, 0.85) 0%, rgba(10, 142, 199, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') center/cover no-repeat;
+}
+*/
+
+/* Option 3: Medical technology
+.hero-section {
+    background: 
+        linear-gradient(135deg, rgba(13, 202, 240, 0.85) 0%, rgba(10, 142, 199, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+}
+*/
+
+/* Option 4: DNA/Science theme
+.hero-section {
+    background: 
+        linear-gradient(135deg, rgba(13, 202, 240, 0.85) 0%, rgba(10, 142, 199, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') center/cover no-repeat;
+}
+*/
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -30%;
+    width: 70%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: skewX(-25deg);
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-section .lead {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Service Cards */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+.service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(13, 202, 240, 0.1);
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+/* Section Spacing */
+section {
+    padding: 80px 0;
+}
+
+/* Company Section */
+#company img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Contact Form */
+.form-control,
+.form-select {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 202, 240, 0.25);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 2rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-info {
+    background: var(--primary-color);
+    border: none;
+}
+
+.btn-info:hover {
+    background: var(--gradient-end);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 202, 240, 0.3);
+}
+
+.btn-light:hover {
+    background: #f8f9fa;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Cards */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a !important;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-on-scroll {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .display-5 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-icon i {
+        font-size: 2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .btn-lg {
+        padding: 0.5rem 1.5rem;
+        font-size: 1rem;
+    }
+}
